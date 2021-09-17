@@ -109,7 +109,7 @@ export default function Home({ data }) {
       </ul>
 
       <ul className="flex items-center justify-center flex-wrap max-w-screen-2lg  ">
-        {results.flatMap((result) => {
+        {results.flatMap((result, href) => {
           const { id, name, image, status } = result;
 
           return (
@@ -147,7 +147,7 @@ export default function Home({ data }) {
                 </div>
                
               </a>
-              <Link href="/character/[id]" as={`/character/${id}`}>
+              <Link passHref href={href.toString()} as={`/character/${id}`}>
                 <button className="bg-gray-600 text-white flex flex-col  mx-auto my-4  rounded-md px-6 py-1">
                   Read More
                 </button>

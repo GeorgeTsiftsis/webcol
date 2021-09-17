@@ -1,4 +1,6 @@
+import Image from "next/image"
 import { useState } from "react";
+
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -25,7 +27,7 @@ function Youtube({ data }) {
     setPostNum((prevPostNum) => prevPostNum + 2);
   }
 
-  // console.log(data);
+  console.log(data);
   return (
     <div className="container mx-auto  ">
       <ul className="flex items-center justify-center flex-wrap max-w-screen-2lg">
@@ -41,9 +43,11 @@ function Youtube({ data }) {
                 key={id}
               >
                 <div>
-                  <img
+                  <Image
                     className="rounded-t-3xl w-80"
-                    height={medium.height}
+                    width="320"
+                    height="180"
+                    // height={medium.height}
                     src={medium.url}
                     alt={title}
                   />
