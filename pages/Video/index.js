@@ -28,7 +28,7 @@ function Youtube({ data }) {
   return (
     <div className="container mx-auto  ">
       <ul className="flex items-center justify-center flex-wrap max-w-screen-2lg">
-        {data.items.map((item) => {
+        {data.items.flatMap((item) => {
               //   .slice(0, postNum)
             // console.log(item);
             const { id, snippet = {} } = item;

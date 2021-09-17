@@ -115,9 +115,9 @@ export default function Home({ data }) {
           return (
             <li
               key={id}
-              className="m-4   flex-shrink-0  text-left no-underline border-4  border-black  rounded-3xl	transition duration-500 ease-in-out "
+              className="m-4 flex-shrink-0 text-left no-underline border-4  border-black  rounded-3xl	transition duration-500 ease-in-out"
             >
-              <a className="">
+              <a>
                 <Image
                   className="rounded-t-3xl"
                   width="280"
