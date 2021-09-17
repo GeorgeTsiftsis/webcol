@@ -44,7 +44,7 @@ function Youtube({ data }) {
                     className="rounded-t-3xl w-80"
                     height={medium.height}
                     src={medium.url}
-                    alt=""
+                    alt={title}
                   />
                   <h3 className=" p-2 h-20 text-sm font-bold   text-left ">
                     {title}

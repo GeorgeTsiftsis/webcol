@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from 'next/image'
+
 const defaultEndpoint = "https://rickandmortyapi.com/api/character/";
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -107,7 +109,7 @@ export default function Home({ data }) {
       </ul>
 
       <ul className="flex items-center justify-center flex-wrap max-w-screen-2lg  ">
-        {results.map((result) => {
+        {results.flatMap((result) => {
           const { id, name, image, status } = result;
 
           return (
@@ -116,9 +118,10 @@ export default function Home({ data }) {
               className="m-4   flex-shrink-0  text-left no-underline border-4  border-black  rounded-3xl	transition duration-500 ease-in-out "
             >
               <a className="">
-                <img
+                <Image
                   className="rounded-t-3xl"
                   width="280"
+                  height="280"
                   src={image}
                   alt={`'${name}`}
                 />
