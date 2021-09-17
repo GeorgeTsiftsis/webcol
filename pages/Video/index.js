@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -18,18 +19,18 @@ export async function getServerSideProps() {
 }
 
 function Youtube({ data }) {
-//   const [postNum, setPostNum] = useState(6);
-//   function handleClick(e) {
-//     e.preventDefault();
-//     setPostNum((prevPostNum) => prevPostNum + 2);
-//   }
+  const [postNum, setPostNum] = useState(6);
+  function handleClick(e) {
+    e.preventDefault();
+    setPostNum((prevPostNum) => prevPostNum + 2);
+  }
 
   // console.log(data);
   return (
     <div className="container mx-auto  ">
       <ul className="flex items-center justify-center flex-wrap max-w-screen-2lg">
-        {data.items.flatMap((item) => {
-              //   .slice(0, postNum)
+        {data.items.slice(0, postNum).flatMap((item) => {
+                
             // console.log(item);
             const { id, snippet = {} } = item;
             const { title, thumbnails = {}, resourceId } = snippet;
@@ -64,12 +65,12 @@ function Youtube({ data }) {
           })}
       </ul>
       <p className="flex items-center justify-center">
-        {/* <button
+        <button
           className="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110  mt-8 p-4 rounded-md"
           onClick={handleClick}
         >
           Load More
-        </button> */}
+        </button>
       </p>
     </div>
   );
