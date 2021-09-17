@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 const defaultEndpoint = "https://rickandmortyapi.com/api/character/";
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -72,7 +71,6 @@ export default function Home({ data }) {
       current: endpoint,
     });
   }
-  const router = useRouter();
 
   return (
     <div className="font-serif flex flex-col items-center justify-center min-h-screen mb-8 ">
