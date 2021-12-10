@@ -1,3 +1,8 @@
+A single page application for Rick and Morty series. User can search for all the characters of show and learn about details. Also theres a section of videos which are provided by Adult Swim fetched from a Youtube API.
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
